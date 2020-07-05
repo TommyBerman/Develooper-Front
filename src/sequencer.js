@@ -1,7 +1,9 @@
-const baseURL =
-  process.env.NODE_ENV === "production"
-    ? "https://develooper.herokuapp.com"
-    : "http://localhost:3000";
+// const baseURL =
+//   process.env.NODE_ENV === "production"
+//     ? "https://develooper.herokuapp.com"
+//     : "http://localhost:3000";
+
+
 
 const compositionURL = `${baseURL}/compositions`;
 const soundsURL = `${baseURL}/sounds`;

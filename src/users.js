@@ -1,4 +1,8 @@
-const userURL = "http://127.0.0.1:3000/users/"
+const baseURL =
+  process.env.NODE_ENV === "production"
+    ? "https://develooper.herokuapp.com"
+    : "http://localhost:3000";
+const userURL = `${baseURL}/users`
 
 
 function newUser(user, cb) {

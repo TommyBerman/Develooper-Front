@@ -12,6 +12,7 @@ function saveComposition(composition, cb) {
     })
     .then(resp => resp.json())
     .then(cb)
+    
 }
 
 function getUserCompositions(userId, cb) {
@@ -23,6 +24,7 @@ function getUserCompositions(userId, cb) {
     })
     .then(resp => resp.json())
     .then(cb)
+    .then(console.log(userId))
 }
 
 

@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 email: loginForm.email.value
         }  
 
-
-        loginUser(bodyForm, user => {
+        if (bodyForm.email !== "") {
+            loginUser(bodyForm, user => {
             loggedUser = user
 
             compositionForm.style.visibility = "visible";
@@ -89,11 +89,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
             
             getUserCompositions(loggedUser.id, compositions => {
+                console.log(compositions)
                 userCompositions = compositions
                 populateCompositionDropDown(compositions)
             })
 
-        })
+        })}
+        else {
+            console.log('cannot log in')
+        }
+        
 
         
     })
@@ -113,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             user_id: loggedUser.id
         }, () => {
             getUserCompositions(loggedUser.id, compositions => {
+                console.log(compositions)
                 userCompositions = compositions
                 populateCompositionDropDown(compositions)
             })
@@ -130,17 +136,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
 ///////////////////////////////
 
     function populateCompositionDropDown(compositions){
-        while (compositionList.hasChildNodes()) {
-            compositionList.removeChild(compositionList.lastChild);
+        if (compositions.length !== 0) {
+
+            while (compositionList.hasChildNodes()) {
+                compositionList.removeChild(compositionList.lastChild);
+            }
+            let firstOption = document.createElement('option')
+            firstOption.innerText = "Select Composition"
+            compositionList.appendChild(firstOption)
+            compositions.forEach(composition => {
+                let optionLi = document.createElement('option')
+                optionLi.value = composition.id
+                optionLi.innerText = composition.name
+                compositionList.appendChild(optionLi)
+            });
         }
-        let firstOption = document.createElement('option')
-        firstOption.innerText = "Select Composition"
-        compositionList.appendChild(firstOption)
-        compositions.forEach(composition => {
-            let optionLi = document.createElement('option')
-            optionLi.value = composition.id
-            optionLi.innerText = composition.name
-            compositionList.appendChild(optionLi)
-        });
     }
 })

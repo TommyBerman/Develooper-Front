@@ -538,7 +538,7 @@ input[type="checkbox"]{
     cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
-    background: rgb(238, 60, 83);
+    background: rgb(55, 167, 21);
     box-sizing: border-box;
     position: relative;
     box-sizing: content-box ;
@@ -550,7 +550,7 @@ input[type="checkbox"]{
     margin: 0 6px;
     }
     input[id="startStop"]:checked{
-      background-color: rgb(55, 167, 21);
+      background-color: rgb(238, 60, 83);
     }
     input[id="startStop"]:focus{
       outline: 0 none;

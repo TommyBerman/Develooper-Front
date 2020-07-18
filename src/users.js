@@ -1,4 +1,5 @@
-const userURL = "https://develooper.herokuapp.com/users/"
+const baseURL = "https://develooper.herokuapp.com"
+const userURL = `${baseURL}/users/`
 
 
 function newUser(user, cb) {

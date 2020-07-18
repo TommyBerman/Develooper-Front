@@ -1,4 +1,4 @@
-const compositionURL = "http://127.0.0.1:3000/compositions/"
+const compositionURL = "https://develooper.herokuapp.com/compositions/"
 
 
 function saveComposition(composition, cb) {
@@ -34,12 +34,12 @@ function getUserCompositions(userId, cb) {
 function sequencer() {
 
 
-    const kick = new Tone.Player("http://127.0.0.1:3000/sounds/kick-acoustic01").toDestination()
-    const snare = new Tone.Player("http://127.0.0.1:3000/sounds/snare1").toDestination()
-    const hiHat = new Tone.Player("http://127.0.0.1:3000/sounds/hi-hat1").toDestination()
-    const tom = new Tone.Player("http://127.0.0.1:3000/sounds/tom-analog").toDestination()
-    const ride = new Tone.Player("http://127.0.0.1:3000/sounds/ride-acoustic02").toDestination()
-    const crash = new Tone.Player("http://127.0.0.1:3000/sounds/crash-tape").toDestination()
+    const kick = new Tone.Player("https://develooper.herokuapp.com/sounds/kick-acoustic01").toDestination()
+    const snare = new Tone.Player("https://develooper.herokuapp.com/sounds/snare1").toDestination()
+    const hiHat = new Tone.Player("https://develooper.herokuapp.com/sounds/hi-hat1").toDestination()
+    const tom = new Tone.Player("https://develooper.herokuapp.com/sounds/tom-analog").toDestination()
+    const ride = new Tone.Player("https://develooper.herokuapp.com/sounds/ride-acoustic02").toDestination()
+    const crash = new Tone.Player("https://develooper.herokuapp.com/sounds/crash-tape").toDestination()
 
 
     let index = 0
